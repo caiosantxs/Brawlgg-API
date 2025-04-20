@@ -1,0 +1,5 @@
+CREATE TABLE time (
+    id BIGSERIAL PRIMARY KEY,
+    nome VARCHAR NOT NULL,
+    regiao VARCHAR NOT NULL
+);
