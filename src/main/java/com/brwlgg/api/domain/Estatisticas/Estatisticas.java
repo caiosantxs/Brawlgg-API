@@ -1,8 +1,6 @@
 package com.brwlgg.api.domain.Estatisticas;
 
-import com.brwlgg.api.domain.Brawler.Brawler;
 import com.brwlgg.api.domain.Jogador.Jogador;
-import com.brwlgg.api.domain.Partida.Partida;
 import com.brwlgg.api.domain.PartidaPossuiModo.PartidaPossuiModo;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Min;
@@ -25,9 +23,8 @@ public class Estatisticas {
     @JoinColumn(name = "jogador_id", referencedColumnName = "id", nullable = false)
     private Jogador jogador;
 
-    @ManyToOne
-    @JoinColumn(name = "brawler_id", referencedColumnName = "id", nullable = false)
-    private Brawler brawler;
+    @Column(name = "brawler")
+    private String brawler;
 
     @ManyToOne
     @JoinColumns({
@@ -45,7 +42,7 @@ public class Estatisticas {
     @Min(0)
     private int dps;
 
-    public Estatisticas(EstatisticasRequestDTO dto, Jogador jogador, Brawler brawler, PartidaPossuiModo partidaPossuiModo) {
+    public Estatisticas(EstatisticasRequestDTO dto, Jogador jogador, String brawler, PartidaPossuiModo partidaPossuiModo) {
         this.jogador = jogador;
         this.brawler = brawler;
         this.partidaPossuiModo = partidaPossuiModo;

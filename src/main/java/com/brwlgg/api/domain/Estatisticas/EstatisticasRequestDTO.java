@@ -8,8 +8,8 @@ public record EstatisticasRequestDTO(
         @NotNull(message = "O ID do jogador é obrigatório")
         Long jogadorId,
 
-        @NotNull(message = "O ID do brawler utilizado é obrigatório")
-        Long brawlerId,
+        @NotNull(message = "O nome do brawler utilizado é obrigatório")
+        String brawler,
 
         @NotNull(message = "O ID da relação entre partida e modo de jogo é obrigatório")
         Long modoJogoId,
